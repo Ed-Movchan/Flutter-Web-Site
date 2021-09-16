@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Other extends StatelessWidget {
+class Contacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.open_with),
-        title: Text('Other'),
+        title: Text('Contacts'),
         centerTitle: true,
       ),
-      body: Center(
-          child: SelectableText('Other')
-      ),
+      body: Center(child: SelectableText('OtContacts')),
     );
   }
 }

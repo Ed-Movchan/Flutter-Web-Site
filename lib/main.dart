@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_app/begin_work.dart';
+import 'package:flutter_web_app/contacts.dart';
 import 'package:flutter_web_app/faq.dart';
 import 'package:flutter_web_app/my_home_page.dart';
-import 'package:flutter_web_app/other.dart';
+import 'package:flutter_web_app/price.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,10 +17,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => MyHomePage(title:'OnClinic IT Portal'),
+        '/': (context) => MyHomePage(title: 'Cache IT'),
         '/BeginWork': (context) => BeginWork(),
+        '/Price': (context) => Price(),
         '/FAQ': (context) => FAQ(),
-        '/Other': (context) => Other(),
+        '/Contacts': (context) => Contacts(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,

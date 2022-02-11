@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class FAQ extends StatelessWidget {
+class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.help_outline),
-        title: Text('F.A.Q.'),
+        leading: Icon(Icons.app_settings_alt),
+        title: Text('Applications'),
         centerTitle: true,
       ),
       body: Center(
-          child: SelectableText('F.A.Q.')
+          child: SelectableText('Applications')
       ),
     );
   }

@@ -1,11 +1,8 @@
-import 'dart:ui';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  MyHomePage();
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -30,11 +27,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: SelectableText(widget.title),
-        centerTitle: true,
-        backgroundColor: Colors.deepPurple,
-      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -42,15 +34,6 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.symmetric(vertical: 10),
             child: Container(
               decoration: BoxDecoration(
-                // borderRadius: BorderRadius.all(Radius.circular(10)),
-                // boxShadow: [
-                //   BoxShadow(
-                //     color: Colors.deepPurple.withOpacity(0.5),
-                //     spreadRadius: 3,
-                //     blurRadius: 5,
-                //     offset: Offset(0, 3),
-                //   ),
-                // ],
                 color: Colors.deepPurple,
               ),
               height: 130,
@@ -62,95 +45,81 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Container(
                         child: Flexible(
                           child: SelectableText(
-                            '050 177-79-74  |  097 729-97-01',
+                            'www.movchanskiy.pp.ua',
                             style: TextStyle(
                                 fontSize: 28,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
-                        // height: 40,
-                        // width: 300,
-                        // decoration: BoxDecoration(
-                        //   borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        //   color: Colors.white,
-                        // ),
-                        // child: Center(
-                        //   child: TextFormField(
-                        //     decoration: InputDecoration(
-                        //       labelText: "Поиск по документации...",
-                        //       suffixIcon: IconButton(
-                        //         onPressed: () {},
-                        //         icon: Icon(Icons.search),
-                        //       ),
-                        //       fillColor: Colors.white,
-                        //       border: OutlineInputBorder(
-                        //         borderRadius: BorderRadius.circular(10.0),
-                        //         borderSide: BorderSide(),
-                        //       ),
-                        //     ),
-                        //     enabled: true,
-                        //     cursorHeight: 18,
-                        //     cursorColor: Colors.blueAccent,
-                        //     style: TextStyle(fontSize: 18),
-                        //   ),
-                        // ),
                       ),
                     ),
-                    Flexible(
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 40,
-                          width: 300,
-                          decoration: BoxDecoration(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.0)),
-                            color: Colors.white,
-                          ),
-                          child: Center(
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                labelText: "Поиск по документации...",
-                                suffixIcon: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.search),
-                                ),
-                                fillColor: Colors.white,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  borderSide: BorderSide(),
-                                ),
-                              ),
-                              enabled: true,
-                              cursorHeight: 18,
-                              cursorColor: Colors.deepPurple,
-                              style: TextStyle(fontSize: 18),
-                            ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Container(
+                        child: Flexible(
+                          child: SelectableText(
+                            'Last updated: 11 February 2022',
+                            style: TextStyle(
+                                fontSize: 28,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
                     ),
+                    // Flexible(
+                    //   child: Padding(
+                    //     padding: EdgeInsets.all(8.0),
+                    //     child: Container(
+                    //       height: 40,
+                    //       width: 300,
+                    //       decoration: BoxDecoration(
+                    //         borderRadius:
+                    //             BorderRadius.all(Radius.circular(10.0)),
+                    //         color: Colors.white,
+                    //       ),
+                    //       child: Center(
+                    //         child: TextFormField(
+                    //           decoration: InputDecoration(
+                    //             labelText: "Поиск по документации...",
+                    //             suffixIcon: IconButton(
+                    //               onPressed: () {},
+                    //               icon: Icon(Icons.search),
+                    //             ),
+                    //             fillColor: Colors.white,
+                    //             border: OutlineInputBorder(
+                    //               borderRadius: BorderRadius.circular(10.0),
+                    //               borderSide: BorderSide(),
+                    //             ),
+                    //           ),
+                    //           enabled: true,
+                    //           cursorHeight: 18,
+                    //           cursorColor: Colors.deepPurple,
+                    //           style: TextStyle(fontSize: 18),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ]),
             ),
           ),
-          Flexible(
-            child: Row(
+          Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                menuSection('/BeginWork', Icons.hail, 'Услуги'),
-                menuSection('/Price', Icons.monetization_on_outlined, 'Цены'),
-                menuSection('/FAQ', Icons.help_outline, 'ЧаВо'),
-                menuSection('/Contacts', Icons.phone, 'Контакты'),
+                menuSection('/CV', Icons.library_books, 'CV'),
+                menuSection('/LinkedIn', Icons.hail, 'LinkedIn'),
+                menuSection('/Application', Icons.app_settings_alt, 'Applications'),
+                menuSection('/Certifications', Icons.dashboard_outlined, 'Certifications'),
               ],
             ),
-          ),
           Flexible(
             child: Padding(
               padding: EdgeInsets.only(bottom: 20),
               child: SelectableText(
-                'Welcome to Cache IT Portal',
-                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                'Welcome to Eduard Movchan Personal Portal',
+                style: TextStyle(fontSize: 44, fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -158,16 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Padding(
               padding: EdgeInsets.only(bottom: 20),
               child: SelectableText(
-                'You need SysAdmin help - we do it!',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          Flexible(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 20),
-              child: SelectableText(
-                'Windows, Linux, MacOS, Servers, Cloud, HelpDesk',
+                'Windows, Windows Server, Linux, MacOS, HelpDesk, Cloud',
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
             ),
@@ -183,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SelectableText(
-              'Do you like Cashe IT?',
+              'Do you like Eduard Movchan Personal Portal?',
             ),
           ),
           Row(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_app/begin_work.dart';
-import 'package:flutter_web_app/contacts.dart';
-import 'package:flutter_web_app/faq.dart';
+import 'package:flutter_web_app/cv.dart';
+import 'package:flutter_web_app/certifications.dart';
+import 'package:flutter_web_app/application.dart';
 import 'package:flutter_web_app/my_home_page.dart';
-import 'package:flutter_web_app/price.dart';
+import 'package:flutter_web_app/linkedin.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,14 +14,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Flutter Web Site',
       initialRoute: '/',
       routes: {
-        '/': (context) => MyHomePage(title: 'Cache IT'),
-        '/BeginWork': (context) => BeginWork(),
-        '/Price': (context) => Price(),
-        '/FAQ': (context) => FAQ(),
-        '/Contacts': (context) => Contacts(),
+        '/': (context) => MyHomePage(),
+        '/CV': (context) => CV(),
+        '/LinkedIn': (context) => LinkedIn(),
+        '/Application': (context) => Application(),
+        '/Certifications': (context) => Certifications(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,

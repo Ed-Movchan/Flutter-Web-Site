@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class BeginWork extends StatelessWidget {
+class CV extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.hail),
-        title: Text('Begin Work'),
+        title: Text('CV'),
         centerTitle: true,
       ),
       body: Center(
-        child: SelectableText('Begin Work')
+        child: SelectableText('CV')
       ),
     );
   }

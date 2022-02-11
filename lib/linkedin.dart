@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Contacts extends StatelessWidget {
+class LinkedIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.open_with),
-        title: Text('Contacts'),
+        leading: Icon(Icons.hail),
+        title: Text('LinkedIn'),
         centerTitle: true,
       ),
-      body: Center(child: SelectableText('OtContacts')),
+      body: Center(child: SelectableText('LinkedIn')),
     );
   }
 }

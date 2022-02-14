@@ -27,178 +27,165 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  // color: Colors.deepPurple,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Container(
+              child: Flexible(
+                child: SelectableText(
+                  'www.movchanskiy.pp.ua',
+                  style: TextStyle(
+                      fontSize: 36,
+                      color: Colors.blueAccent,
+                      fontWeight: FontWeight.bold),
                 ),
-                height: 130,
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Container(
-                          child: Flexible(
-                            child: SelectableText(
-                              'www.movchanskiy.pp.ua',
-                              style: TextStyle(
-                                  fontSize: 28,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Container(
-                          child: Flexible(
-                            child: SelectableText(
-                              'Last updated: 11 February 2022',
-                              style: TextStyle(
-                                  fontSize: 28,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                      // Flexible(
-                      //   child: Padding(
-                      //     padding: EdgeInsets.all(8.0),
-                      //     child: Container(
-                      //       height: 40,
-                      //       width: 300,
-                      //       decoration: BoxDecoration(
-                      //         borderRadius:
-                      //             BorderRadius.all(Radius.circular(10.0)),
-                      //         color: Colors.white,
-                      //       ),
-                      //       child: Center(
-                      //         child: TextFormField(
-                      //           decoration: InputDecoration(
-                      //             labelText: "Поиск по документации...",
-                      //             suffixIcon: IconButton(
-                      //               onPressed: () {},
-                      //               icon: Icon(Icons.search),
-                      //             ),
-                      //             fillColor: Colors.white,
-                      //             border: OutlineInputBorder(
-                      //               borderRadius: BorderRadius.circular(10.0),
-                      //               borderSide: BorderSide(),
-                      //             ),
-                      //           ),
-                      //           enabled: true,
-                      //           cursorHeight: 18,
-                      //           cursorColor: Colors.deepPurple,
-                      //           style: TextStyle(fontSize: 18),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ]),
               ),
             ),
-            Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Container(
+              child: Flexible(
+                child: SelectableText(
+                  'Last updated: 14 February 2022',
+                  style: TextStyle(
+                      fontSize: 28,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          ),
+          // Flexible(
+          //   child: Padding(
+          //     padding: EdgeInsets.all(8.0),
+          //     child: Container(
+          //       height: 40,
+          //       width: 300,
+          //       decoration: BoxDecoration(
+          //         borderRadius:
+          //             BorderRadius.all(Radius.circular(10.0)),
+          //         color: Colors.white,
+          //       ),
+          //       child: Center(
+          //         child: TextFormField(
+          //           decoration: InputDecoration(
+          //             labelText: "Поиск по документации...",
+          //             suffixIcon: IconButton(
+          //               onPressed: () {},
+          //               icon: Icon(Icons.search),
+          //             ),
+          //             fillColor: Colors.white,
+          //             border: OutlineInputBorder(
+          //               borderRadius: BorderRadius.circular(10.0),
+          //               borderSide: BorderSide(),
+          //             ),
+          //           ),
+          //           enabled: true,
+          //           cursorHeight: 18,
+          //           cursorColor: Colors.deepPurple,
+          //           style: TextStyle(fontSize: 18),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              menuSection('/CV', 'cv_logo.png', ''),
+              menuSection('/LinkedIn', 'linkedin_logo.jpg', ''),
+              menuSection(
+                  '/Application', 'google_play_store_logo.png', 'Applications'),
+              menuSection('/Certifications', 'certificate_logo.jpg',
+                  'Certifications'),
+            ],
+          ),
+          Flexible(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: SelectableText(
+                'Welcome to Eduard Movchan Personal Portal',
+                style: TextStyle(fontSize: 44, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+          Flexible(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: SelectableText(
+                'Windows, Windows Server, Linux, MacOS, HelpDesk, Cloud',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+          Container(
+            height: 80,
+            child: CachedNetworkImage(
+              placeholder: (context, url) => CircularProgressIndicator(),
+              imageUrl:
+                  'https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ',
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SelectableText(
+              'Do you like Eduard Movchan Personal Portal?',
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
                 children: [
-                  menuSection('/CV', Icons.library_books, 'CV'),
-                  menuSection('/LinkedIn', Icons.hail, 'LinkedIn'),
-                  menuSection('/Application', Icons.app_settings_alt, 'Applications'),
-                  menuSection('/Certifications', Icons.dashboard_outlined, 'Certifications'),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      '$_counterLike',
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: _incrementCounter,
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.green)),
+                    child: Icon(Icons.plus_one),
+                  ),
                 ],
               ),
-            Flexible(
-              child: Padding(
-                padding: EdgeInsets.only(bottom: 20),
-                child: SelectableText(
-                  'Welcome to Eduard Movchan Personal Portal',
-                  style: TextStyle(fontSize: 44, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            Flexible(
-              child: Padding(
-                padding: EdgeInsets.only(bottom: 20),
-                child: SelectableText(
-                  'Windows, Windows Server, Linux, MacOS, HelpDesk, Cloud',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            Container(
-              height: 80,
-              child: CachedNetworkImage(
-                placeholder: (context, url) => CircularProgressIndicator(),
-                imageUrl:
-                    'https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ',
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SelectableText(
-                'Do you like Eduard Movchan Personal Portal?',
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        '$_counterLike',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
+              SizedBox(width: 50),
+              Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      '$_counterDislike',
+                      style: Theme.of(context).textTheme.headline4,
                     ),
-                    SizedBox(height: 10),
-                    ElevatedButton(
-                      onPressed: _incrementCounter,
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.green)),
-                      child: Icon(Icons.plus_one),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 50),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        '$_counterDislike',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    ElevatedButton(
-                      onPressed: _decrementCounter,
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red)),
-                      child: Icon(Icons.exposure_minus_1),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ],
-        ),
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: _decrementCounter,
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.red)),
+                    child: Icon(Icons.exposure_minus_1),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ],
       ),
     );
   }
 
-  Widget menuSection(String route, IconData prefixIcon, String text) {
+  Widget menuSection(String route, String image, String text) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Padding(
@@ -216,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                  color: Colors.white70,
+                  color: Colors.white,
                   border: Border.all(color: Colors.grey, width: 1.0),
                   boxShadow: [
                     BoxShadow(
@@ -228,16 +215,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 height: height * 0.08,
-                width: width * 0.2,
+                width: width * 0.4,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
                       padding: EdgeInsets.all(8.0),
                       child:
-                          Icon(prefixIcon, size: 60, color: Colors.blueAccent),
+                      Container(
+                          child: Image(image: AssetImage(image))
+                      ),
                     ),
                     Flexible(
-                      child: SelectableText(
+                      child: Text(
                         text,
                         style: TextStyle(
                             color: Colors.black54,

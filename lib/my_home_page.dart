@@ -31,68 +31,27 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Container(
-              child: Flexible(
-                child: SelectableText(
-                  'www.movchanskiy.pp.ua',
-                  style: TextStyle(
-                      fontSize: 36,
-                      color: Colors.blueAccent,
-                      fontWeight: FontWeight.bold),
-                ),
+          Flexible(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: SelectableText(
+                'www.movchanskiy.pp.ua',
+                style: TextStyle(
+                    fontSize: 32,
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Container(
-              child: Flexible(
-                child: SelectableText(
-                  'Last updated: 14 February 2022',
-                  style: TextStyle(
-                      fontSize: 28,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
-                ),
+          Flexible(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: SelectableText(
+                'Last updated: 14 February 2022',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
           ),
-          // Flexible(
-          //   child: Padding(
-          //     padding: EdgeInsets.all(8.0),
-          //     child: Container(
-          //       height: 40,
-          //       width: 300,
-          //       decoration: BoxDecoration(
-          //         borderRadius:
-          //             BorderRadius.all(Radius.circular(10.0)),
-          //         color: Colors.white,
-          //       ),
-          //       child: Center(
-          //         child: TextFormField(
-          //           decoration: InputDecoration(
-          //             labelText: "Поиск по документации...",
-          //             suffixIcon: IconButton(
-          //               onPressed: () {},
-          //               icon: Icon(Icons.search),
-          //             ),
-          //             fillColor: Colors.white,
-          //             border: OutlineInputBorder(
-          //               borderRadius: BorderRadius.circular(10.0),
-          //               borderSide: BorderSide(),
-          //             ),
-          //           ),
-          //           enabled: true,
-          //           cursorHeight: 18,
-          //           cursorColor: Colors.deepPurple,
-          //           style: TextStyle(fontSize: 18),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -100,27 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
               menuSection('/LinkedIn', 'linkedin_logo.jpg', ''),
               menuSection(
                   '/Application', 'google_play_store_logo.png', 'Applications'),
-              menuSection('/Certifications', 'certificate_logo.jpg',
-                  'Certifications'),
+              menuSection(
+                  '/Certifications', 'certificate_logo.jpg', 'Certifications'),
             ],
-          ),
-          Flexible(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 20),
-              child: SelectableText(
-                'Welcome to Eduard Movchan Personal Portal',
-                style: TextStyle(fontSize: 44, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          Flexible(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 20),
-              child: SelectableText(
-                'Windows, Windows Server, Linux, MacOS, HelpDesk, Cloud',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-            ),
           ),
           Container(
             height: 80,
@@ -221,10 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Padding(
                       padding: EdgeInsets.all(8.0),
-                      child:
-                      Container(
-                          child: Image(image: AssetImage(image))
-                      ),
+                      child: Container(child: Image(image: AssetImage(image))),
                     ),
                     Flexible(
                       child: Text(

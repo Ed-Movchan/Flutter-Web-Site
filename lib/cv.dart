@@ -7,16 +7,15 @@ class CV extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.hail),
+        leading: Icon(Icons.list_alt),
         title: Text('CV'),
         centerTitle: true,
       ),
       body: Center(
         child: Container(
-          height: height * 0.9,
-          width: width * 0.5,
-          child: Image(image: AssetImage('eduard_movchan_cv.png'))
-        ),
+            height: height * 0.9,
+            width: width * 0.8,
+            child: Image(image: AssetImage('eduard_movchan_cv.png'))),
       ),
     );
   }

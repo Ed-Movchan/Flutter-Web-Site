@@ -27,101 +27,99 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Flexible(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 20),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+                padding: EdgeInsets.symmetric(vertical: 20),
+                child: SelectableText(
+                  'www.movchanskiy.pp.ua',
+                  style: TextStyle(
+                      fontSize: 32,
+                      color: Colors.indigo,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            Padding(
+                padding: EdgeInsets.only(bottom: 20),
+                child: SelectableText(
+                  'Last updated: 14 February 2022',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                menuSection('/CV', 'cv_logo.png', ''),
+                menuSection('/LinkedIn', 'linkedin_logo.jpg', ''),
+                menuSection(
+                    '/Application', 'google_play_store_logo.png', 'Applications'),
+                menuSection(
+                    '/Certifications', 'certificate_logo.jpg', 'Certifications'),
+              ],
+            ),
+            Container(
+              height: 80,
+              child: CachedNetworkImage(
+                placeholder: (context, url) => CircularProgressIndicator(),
+                imageUrl:
+                    'https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: SelectableText(
-                'www.movchanskiy.pp.ua',
-                style: TextStyle(
-                    fontSize: 32,
-                    color: Colors.indigo,
-                    fontWeight: FontWeight.bold),
+                'Do you like Eduard Movchan Personal Portal?',
               ),
             ),
-          ),
-          Flexible(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 20),
-              child: SelectableText(
-                'Last updated: 14 February 2022',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              menuSection('/CV', 'cv_logo.png', ''),
-              menuSection('/LinkedIn', 'linkedin_logo.jpg', ''),
-              menuSection(
-                  '/Application', 'google_play_store_logo.png', 'Applications'),
-              menuSection(
-                  '/Certifications', 'certificate_logo.jpg', 'Certifications'),
-            ],
-          ),
-          Container(
-            height: 80,
-            child: CachedNetworkImage(
-              placeholder: (context, url) => CircularProgressIndicator(),
-              imageUrl:
-                  'https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ',
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SelectableText(
-              'Do you like Eduard Movchan Personal Portal?',
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Text(
-                      '$_counterLike',
-                      style: Theme.of(context).textTheme.headline4,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        '$_counterLike',
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: _incrementCounter,
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.green)),
-                    child: Icon(Icons.plus_one),
-                  ),
-                ],
-              ),
-              SizedBox(width: 50),
-              Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Text(
-                      '$_counterDislike',
-                      style: Theme.of(context).textTheme.headline4,
+                    SizedBox(height: 10),
+                    ElevatedButton(
+                      onPressed: _incrementCounter,
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.green)),
+                      child: Icon(Icons.plus_one),
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: _decrementCounter,
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.red)),
-                    child: Icon(Icons.exposure_minus_1),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ],
+                  ],
+                ),
+                SizedBox(width: 50),
+                Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        '$_counterDislike',
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    ElevatedButton(
+                      onPressed: _decrementCounter,
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.red)),
+                      child: Icon(Icons.exposure_minus_1),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -170,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(
                             color: Colors.black54,
                             fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                            fontSize: 18),
                       ),
                     ),
                   ],

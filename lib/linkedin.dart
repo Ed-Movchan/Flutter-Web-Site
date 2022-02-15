@@ -10,16 +10,16 @@ class LinkedIn extends StatelessWidget {
         title: Text('LinkedIn'),
         centerTitle: true,
       ),
-      body: Center(child:
-      ElevatedButton(
-        onPressed: (){
-          html.window.open('https://www.linkedin.com/in/eduard-movchan-sysadm/',"_blank");
-        },
-        style: ButtonStyle(
-            backgroundColor:
-            MaterialStateProperty.all<Color>(Colors.indigo)),
-        child: Icon(Icons.link_sharp),
-      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            html.window.open(
+                'https://www.linkedin.com/in/eduard-movchan-sysadm/', "_blank");
+          },
+          style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.indigo)),
+          child: Icon(Icons.link_sharp),
+        ),
       ),
     );
   }

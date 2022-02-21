@@ -12,22 +12,30 @@ class CV extends StatelessWidget {
         title: Text('CV'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Column(
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
             children: [
               Container(
-            height: height * 0.9,
-            width: width * 0.8,
-            child: Image(image: AssetImage('eduard_movchan_cv.png'))),
-              ElevatedButton(
-                onPressed: () {
-                  downloadFile('https://drive.google.com/file/d/1YRUr5z_GuCeOdfBYkcAAP1pwAOm4MTSH/view?usp=sharing');
-                },
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.green)),
-                child: Icon(Icons.download_rounded),
+                  height: height * 0.9,
+                  width: width * 0.8,
+                  child: Image(image: AssetImage('eduard_movchan_cv.png'))),
+              Padding(
+                padding: EdgeInsets.only(top: 5),
+                child: InkWell(
+                  onTap: () {
+                    downloadFile(
+                        'https://drive.google.com/file/d/1YRUr5z_GuCeOdfBYkcAAP1pwAOm4MTSH/view?usp=sharing');
+                  },
+                  child: Text(
+                    'Download',
+                    style: TextStyle(decoration: TextDecoration.underline, color: Colors.blue),
+                  ),
+                ),
               ),
-        ]),
+            ],
+          ),
+        ),
       ),
     );
   }

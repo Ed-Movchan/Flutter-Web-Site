@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'dart:html' as html;
 
 class MyHomePage extends StatefulWidget {
   MyHomePage();
@@ -45,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
                 padding: EdgeInsets.only(bottom: 20),
                 child: SelectableText(
-                  'Last updated: 14 February 2022',
+                  'Last updated: 23 February 2022',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -53,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 menuSection('/CV', 'cv_logo.png', ''),
-                menuSection('/LinkedIn', 'linkedin_logo.jpg', ''),
+                externalLinkSection('linkedin_logo.jpg', ''),
                 menuSection(
                     '/Application', 'google_play_store_logo.png', 'Applications'),
                 menuSection(
@@ -131,6 +132,64 @@ class _MyHomePageState extends State<MyHomePage> {
       padding: EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () => Navigator.pushNamed(context, route),
+        customBorder: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        splashColor: Colors.grey,
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 8),
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  color: Colors.white,
+                  border: Border.all(color: Colors.grey, width: 1.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 3,
+                      blurRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
+                height: height * 0.08,
+                width: width * 0.4,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Container(child: Image(image: AssetImage(image))),
+                    ),
+                    Flexible(
+                      child: Text(
+                        text,
+                        style: TextStyle(
+                            color: Colors.black54,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget externalLinkSection(String image, String text) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    return Padding(
+      padding: EdgeInsets.all(8.0),
+      child: InkWell(
+        onTap: () => html.window.open(
+            'https://www.linkedin.com/in/eduard-movchan-sysadm/', "_blank"),
         customBorder: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),

@@ -3,7 +3,6 @@ import 'package:flutter_web_app/cv.dart';
 import 'package:flutter_web_app/certifications.dart';
 import 'package:flutter_web_app/application.dart';
 import 'package:flutter_web_app/my_home_page.dart';
-import 'package:flutter_web_app/linkedin.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +18,6 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => MyHomePage(),
         '/CV': (context) => CV(),
-        '/LinkedIn': (context) => LinkedIn(),
         '/Application': (context) => Application(),
         '/Certifications': (context) => Certifications(),
       },

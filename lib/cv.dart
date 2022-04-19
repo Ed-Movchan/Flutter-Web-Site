@@ -25,7 +25,7 @@ class CV extends StatelessWidget {
                 child: InkWell(
                   onTap: () {
                     downloadFile(
-                        'https://drive.google.com/file/d/1YRUr5z_GuCeOdfBYkcAAP1pwAOm4MTSH/view?usp=sharing');
+                        'https://drive.google.com/file/d/127FYiodJAR2O7jWdPSTigY7mZJP_j0vv/view?usp=sharing');
                   },
                   child: Text(
                     'Download',

@@ -14,17 +14,14 @@ class Application extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
                 Padding(
                   padding: EdgeInsets.all(5),
                   child: SelectableText(
-                    'Flutter Weather Application / Android App',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    'Flutter Weather Application / Android',
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(width: 40),
+                SizedBox(height: 5),
                 ElevatedButton(
                   onPressed: () {
                     downloadFile(
@@ -33,11 +30,9 @@ class Application extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all<Color>(Colors.green)),
-                  child: Text('Download App',
+                  child: Text('Download',
                       style: TextStyle(color: Colors.white, fontSize: 20)),
                 ),
-              ],
-            ),
           ]),
         ),
     );

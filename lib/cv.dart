@@ -20,18 +20,15 @@ class CV extends StatelessWidget {
                   height: height * 0.9,
                   width: width * 0.8,
                   child: Image(image: AssetImage('eduard_movchan_cv.png'))),
-              Padding(
-                padding: EdgeInsets.only(top: 5),
-                child: InkWell(
-                  onTap: () {
-                    downloadFile(
-                        'https://drive.google.com/file/d/127FYiodJAR2O7jWdPSTigY7mZJP_j0vv/view?usp=sharing');
-                  },
-                  child: Text(
-                    'Download',
-                    style: TextStyle(decoration: TextDecoration.underline, color: Colors.blue),
-                  ),
-                ),
+              ElevatedButton(
+                onPressed: () {
+                  downloadFile(
+                      'https://drive.google.com/uc?id=127FYiodJAR2O7jWdPSTigY7mZJP_j0vv&export=download');
+                },
+                style: ButtonStyle(
+                    backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.green)),
+                child: Text('Download', style: TextStyle(color: Colors.white, fontSize: 20)),
               ),
             ],
           ),

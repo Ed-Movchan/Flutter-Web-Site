@@ -69,12 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     'https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ',
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SelectableText(
-                'Do you like Eduard Movchan Personal Portal?',
-              ),
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

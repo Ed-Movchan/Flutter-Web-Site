@@ -27,6 +27,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -50,6 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
+            Container(
+                height: height * 0.2,
+                width: width * 0.2,
+                child: Image(image: AssetImage('eduard_photo.jpg'))),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

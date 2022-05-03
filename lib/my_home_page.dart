@@ -27,8 +27,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -52,10 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
-            Container(
-                height: height * 0.2,
-                width: width * 0.2,
-                child: Image(image: AssetImage('eduard_photo.jpg'))),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -66,14 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 menuSection(
                     '/Certifications', 'certificate_logo.jpg', 'Certifications'),
               ],
-            ),
-            Container(
-              height: 80,
-              child: CachedNetworkImage(
-                placeholder: (context, url) => CircularProgressIndicator(),
-                imageUrl:
-                    'https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ',
-              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

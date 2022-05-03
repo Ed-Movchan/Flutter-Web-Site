@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
                 padding: EdgeInsets.only(bottom: 20),
                 child: SelectableText(
-                  'Last updated: 19 April 2022',
+                  'Last updated: 03 May 2022',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),

@@ -48,8 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       WavyAnimatedText('www.movchanskiy.pp.ua'),
                     ],
                     repeatForever: true,
-                    onTap: () => html.window.open(
-                        'http://www.movchanskiy.pp.ua', "_blank"),
+                    onTap: () => html.window.location.reload(),
                   ),
                 ),
               ),

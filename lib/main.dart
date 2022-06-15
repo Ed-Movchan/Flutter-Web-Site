@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       },
       theme: ThemeData(
         primarySwatch: Colors.orange,
+          textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.green)
       ),
     );
   }

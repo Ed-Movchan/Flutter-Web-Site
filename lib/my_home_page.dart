@@ -1,6 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage();
@@ -28,37 +28,48 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orange,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-                padding: EdgeInsets.symmetric(vertical: 20),
-                child: SelectableText(
-                  'www.movchanskiy.pp.ua',
-                  style: TextStyle(
+              padding: EdgeInsets.symmetric(vertical: 50),
+              child: SizedBox(
+                child: DefaultTextStyle(
+                  style: const TextStyle(
                       fontSize: 32,
                       color: Colors.indigo,
                       fontWeight: FontWeight.bold),
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText('www.movchanskiy.pp.ua'),
+                      WavyAnimatedText('www.movchanskiy.pp.ua'),
+                    ],
+                    repeatForever: true,
+                    onTap: () => html.window.open(
+                        'http://www.movchanskiy.pp.ua', "_blank"),
+                  ),
                 ),
               ),
+            ),
             Padding(
-                padding: EdgeInsets.only(bottom: 20),
-                child: SelectableText(
-                  'Last updated: 03 May 2022',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
+              padding: EdgeInsets.only(bottom: 20),
+              child: SelectableText(
+                'Last updated: 03 May 2022',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 menuSection('/CV', 'cv_logo.png', ''),
                 externalLinkSection('linkedin_logo.jpg', ''),
-                menuSection(
-                    '/Application', 'google_play_store_logo.png', 'Applications'),
-                menuSection(
-                    '/Certifications', 'certificate_logo.jpg', 'Certifications'),
+                menuSection('/Application', 'google_play_store_logo.png',
+                    'Applications'),
+                menuSection('/Certifications', 'certificate_logo.jpg',
+                    'Certifications'),
               ],
             ),
             Row(

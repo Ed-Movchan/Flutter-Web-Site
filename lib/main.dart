@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         '/Certifications': (context) => Certifications(),
       },
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
     );
   }

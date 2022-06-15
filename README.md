@@ -1,3 +1,5 @@
 # flutter_web_app
 
-Flutter web-project
+Flutter Web project
+
+Website with CV, LinkedIn Profile link, Android application with downloading APK, Certifications page.

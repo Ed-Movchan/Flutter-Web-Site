@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:marquee/marquee.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage();
@@ -28,7 +29,31 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: Colors.orange.shade300,
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.transparent,
+        child: Container(
+          padding: EdgeInsets.only(bottom: 10),
+          height: 50,
+          child: Marquee(
+            text:
+                'Skills: Windows, Windows Server, Linux, MacOS, Android, iOS, '
+                'Active Directory, FTP, SMTP, DHCP, Group Policy, Terminal Server, '
+                'Apache, Nginx, Git, Flutter, Dart, GLPI, Zabbix, Bitrix24, '
+                'HikVision, Mikrotik',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            scrollAxis: Axis.horizontal,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            blankSpace: 50.0,
+            velocity: 50.0,
+            startPadding: 10.0,
+            accelerationDuration: Duration(seconds: 1),
+            accelerationCurve: Curves.linear,
+            decelerationDuration: Duration(milliseconds: 500),
+          ),
+        ),
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

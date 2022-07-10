@@ -17,7 +17,7 @@ class Application extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(5),
                   child: SelectableText(
-                    'Flutter Weather Application / Android',
+                    'Weather Application (Flutter) / Android',
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -30,6 +30,26 @@ class Application extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all<Color>(Colors.green)),
+                  child: Text('Download',
+                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                ),
+                SizedBox(height: 30),
+                Padding(
+                  padding: EdgeInsets.all(5),
+                  child: SelectableText(
+                    'Simple Notes (Flutter) / Android',
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(height: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    downloadFile(
+                        'https://drive.google.com/uc?id=12RFwS4WjLtC9E-ItqjaZeUQAL868Naex&export=download');
+                  },
+                  style: ButtonStyle(
+                      backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.green)),
                   child: Text('Download',
                       style: TextStyle(color: Colors.white, fontSize: 20)),
                 ),

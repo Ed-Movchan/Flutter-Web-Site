@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange.shade300,
+      backgroundColor: Colors.orange.shade400,
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
         child: Container(
@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Skills: Windows, Windows Server, Linux, MacOS, Android, iOS, '
                 'Active Directory, FTP, SMTP, DHCP, Group Policy, Terminal Server, '
                 'Apache, Nginx, Git, Flutter, Dart, GLPI, Zabbix, Bitrix24, '
-                'HikVision, Mikrotik',
+                'HikVision, Mikrotik, GitLab Server, Open Project',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             scrollAxis: Axis.horizontal,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
               padding: EdgeInsets.only(bottom: 20),
               child: SelectableText(
-                'Last updated: 11 July 2022',
+                'Last updated: 27 Oktober 2022',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
@@ -176,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 height: height * 0.08,
-                width: width * 0.4,
+                width: width * 0.3,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -234,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 height: height * 0.08,
-                width: width * 0.4,
+                width: width * 0.3,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

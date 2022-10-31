@@ -57,9 +57,7 @@ flutter:
     - certificate_logo.jpg
     - udemy_learn_flutter_certificate.jpg
     - lemon_school_javascript_certificate.jpg
-#     - reports-and-analytics.png
-#     - tutorials-and-tips.png
-#     - getting-started.png
+    - loader.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

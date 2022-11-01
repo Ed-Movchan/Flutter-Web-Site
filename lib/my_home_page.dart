@@ -176,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 height: height * 0.08,
-                width: width * 0.3,
+                width: width * 0.4,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -234,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 height: height * 0.08,
-                width: width * 0.3,
+                width: width * 0.4,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Web Site',
+      title: 'Movchan Eduard - System Administrator',
       initialRoute: '/',
       routes: {
         '/': (context) => MyHomePage(),

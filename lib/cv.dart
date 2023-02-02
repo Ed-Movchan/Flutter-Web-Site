@@ -8,8 +8,18 @@ class CV extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.list_alt),
-        title: Text('CV'),
+        leading: IconButton(
+          icon: Icon(Icons.home),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 5),
+            child: Icon(Icons.list_alt),
+          ),
+          Text('CV'),
+        ]),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -23,12 +33,13 @@ class CV extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   downloadFile(
-                      'https://drive.google.com/uc?id=11zyTJ51FBf5oAHxABM5xhwIdji_R4AZH&export=download');
+                      'https://drive.google.com/uc?id=1a1GbjXHV56yUs3r2xhZ8V7X61toyCFNd&export=download');
                 },
                 style: ButtonStyle(
                     backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.green)),
-                child: Text('Download', style: TextStyle(color: Colors.white, fontSize: 20)),
+                        MaterialStateProperty.all<Color>(Colors.green)),
+                child: Text('Download',
+                    style: TextStyle(color: Colors.white, fontSize: 20)),
               ),
             ],
           ),

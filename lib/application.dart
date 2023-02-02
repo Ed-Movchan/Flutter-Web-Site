@@ -6,8 +6,19 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.app_settings_alt),
-        title: Text('Applications'),
+        leading: IconButton(
+          icon: Icon(Icons.home),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Row(mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 5),
+              child: Icon(Icons.app_settings_alt),
+            ),
+            Text('Applications')
+          ],
+        ),
         centerTitle: true,
       ),
       body: Center(

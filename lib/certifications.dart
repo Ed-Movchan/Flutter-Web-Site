@@ -7,8 +7,18 @@ class Certifications extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.dashboard_outlined),
-        title: Text('Certifications'),
+        leading: IconButton(
+          icon: Icon(Icons.home),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 5),
+            child: Icon(Icons.dashboard_outlined),
+          ),
+          Text('Certifications'),
+        ]),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -18,11 +28,15 @@ class Certifications extends StatelessWidget {
               Container(
                   height: height * 0.8,
                   width: width * 0.9,
-                  child: Image(image: AssetImage('udemy_learn_flutter_certificate.jpg'))),
+                  child: Image(
+                      image:
+                          AssetImage('udemy_learn_flutter_certificate.jpg'))),
               Container(
                   height: height * 0.8,
                   width: width * 0.9,
-                  child: Image(image: AssetImage('lemon_school_javascript_certificate.jpg'))),
+                  child: Image(
+                      image: AssetImage(
+                          'lemon_school_javascript_certificate.jpg'))),
             ],
           ),
         ),

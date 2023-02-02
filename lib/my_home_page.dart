@@ -39,8 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
             text:
                 'Skills: Windows, Windows Server, Linux, MacOS, Android, iOS, '
                 'Active Directory, FTP, SMTP, DHCP, Group Policy, Terminal Server, '
-                'Apache, Nginx, Git, Flutter, Dart, GLPI, Zabbix, Bitrix24, '
-                'HikVision, Mikrotik, GitLab Server, Open Project',
+                'Apache, Nginx, Git, Dart (Flutter), C# (.NET MAUI), GLPI, Zabbix, Bitrix24, '
+                'HikVision, Mikrotik, GitLab Server, Open Project, Headwind MDM',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             scrollAxis: Axis.horizontal,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
               padding: EdgeInsets.only(bottom: 20),
               child: SelectableText(
-                'Last updated: 31 Oktober 2022',
+                'Last updated: 02 February 2023',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
@@ -190,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(
                             color: Colors.black54,
                             fontWeight: FontWeight.bold,
-                            fontSize: 18),
+                            fontSize: 16),
                       ),
                     ),
                   ],
@@ -248,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(
                             color: Colors.black54,
                             fontWeight: FontWeight.bold,
-                            fontSize: 18),
+                            fontSize: 16),
                       ),
                     ),
                   ],

@@ -29,7 +29,7 @@ class CV extends StatelessWidget {
               Container(
                   height: height * 0.9,
                   width: width * 0.8,
-                  child: Image(image: AssetImage('cv.png'))),
+                  child: Image(image: AssetImage('assets/cv.png'))),
               ElevatedButton(
                 onPressed: () {
                   downloadFile(

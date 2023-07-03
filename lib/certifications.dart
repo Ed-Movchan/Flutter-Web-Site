@@ -30,13 +30,13 @@ class Certifications extends StatelessWidget {
                   width: width * 0.9,
                   child: Image(
                       image:
-                          AssetImage('udemy_learn_flutter_certificate.jpg'))),
+                          AssetImage('assets/udemy_learn_flutter_certificate.jpg'))),
               Container(
                   height: height * 0.8,
                   width: width * 0.9,
                   child: Image(
                       image: AssetImage(
-                          'lemon_school_javascript_certificate.jpg'))),
+                          'assets/lemon_school_javascript_certificate.jpg'))),
             ],
           ),
         ),

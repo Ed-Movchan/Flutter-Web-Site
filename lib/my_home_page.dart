@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: EdgeInsets.only(top: 30),
                   child: Container(
                       child: Image(
-                          image: AssetImage('icon_white.png'))),
+                          image: AssetImage('assets/icon_white.png'))),
                 ),
                 HandCursor(
                   child: Padding(
@@ -97,11 +97,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                menuSection('/CV', 'cv_logo.png', ''),
-                externalLinkSection('linkedin_logo.jpg', ''),
-                menuSection('/Application', 'google_play_store_logo.png',
+                menuSection('/CV', 'assets/cv_logo.png', ''),
+                externalLinkSection('assets/linkedin_logo.jpg', ''),
+                menuSection('/Application', 'assets/google_play_store_logo.png',
                     'Applications'),
-                menuSection('/Certifications', 'certificate_logo.jpg',
+                menuSection('/Certifications', 'assets/certificate_logo.jpg',
                     'Certifications'),
               ],
             ),

@@ -29,11 +29,11 @@ class CV extends StatelessWidget {
               Container(
                   height: height * 0.9,
                   width: width * 0.8,
-                  child: Image(image: AssetImage('eduard_movchan_cv.png'))),
+                  child: Image(image: AssetImage('cv.png'))),
               ElevatedButton(
                 onPressed: () {
                   downloadFile(
-                      'https://drive.google.com/uc?id=1a1GbjXHV56yUs3r2xhZ8V7X61toyCFNd&export=download');
+                      'https://drive.google.com/u/0/uc?id=1ttyAeV-1r3Vk8bQC_fZX1hwX0PEVi62e&export=download');
                 },
                 style: ButtonStyle(
                     backgroundColor:

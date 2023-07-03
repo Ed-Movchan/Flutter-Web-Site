@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter_web_app/widget/hand_cursor.dart';
 import 'package:marquee/marquee.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -39,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             text:
                 'Skills: Windows, Windows Server, Linux, MacOS, Android, iOS, '
                 'Active Directory, FTP, SMTP, DHCP, Group Policy, Terminal Server, '
-                'Apache, Nginx, Git, Dart (Flutter), C# (.NET MAUI), GLPI, Zabbix, Bitrix24, '
+                'Apache, Nginx, Git, Dart (Flutter), C# (.NET MAUI), GLPI, Zabbix, '
                 'HikVision, Mikrotik, GitLab Server, Open Project, Headwind MDM',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             scrollAxis: Axis.horizontal,
@@ -59,29 +60,37 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 50),
-              child: SizedBox(
-                child: DefaultTextStyle(
-                  style: const TextStyle(
-                      fontSize: 32,
-                      color: Colors.indigo,
-                      fontWeight: FontWeight.bold),
-                  child: AnimatedTextKit(
-                    animatedTexts: [
-                      TyperAnimatedText('www.movchanskiy.pp.ua'),
-                      WavyAnimatedText('www.movchanskiy.pp.ua'),
-                    ],
-                    repeatForever: true,
-                    onTap: () => html.window.location.reload(),
+                Padding(
+                  padding: EdgeInsets.only(top: 30),
+                  child: Container(
+                      child: Image(
+                          image: AssetImage('icon_white.png'))),
+                ),
+                HandCursor(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 30),
+                    child: SizedBox(
+                      child: DefaultTextStyle(
+                        style: const TextStyle(
+                            fontSize: 32,
+                            color: Colors.indigo,
+                            fontWeight: FontWeight.bold),
+                        child: AnimatedTextKit(
+                          animatedTexts: [
+                            TyperAnimatedText('www.movchanskiy.pp.ua', speed: Duration(milliseconds: 80)),
+                            WavyAnimatedText('www.movchanskiy.pp.ua'),
+                          ],
+                          repeatForever: true,
+                          onTap: () => html.window.location.reload(),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
             Padding(
               padding: EdgeInsets.only(bottom: 20),
               child: SelectableText(
-                'Last updated: 02 February 2023',
+                'Last updated: 03 July 2023',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
@@ -99,33 +108,27 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        '$_counterLike',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    ElevatedButton(
-                      onPressed: _incrementCounter,
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.green)),
-                      child: Icon(Icons.plus_one),
-                    ),
-                  ],
+                ElevatedButton(
+                  onPressed: _incrementCounter,
+                  style: ButtonStyle(
+                      backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.green)),
+                  child: Icon(Icons.plus_one),
                 ),
-                SizedBox(width: 50),
-                Column(
-                  children: [
+                    SizedBox(height: 10),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    '$_counterLike',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ),
+                    SizedBox(width: 50),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
                         '$_counterDislike',
-                        style: Theme.of(context).textTheme.headline4,
+                        style: Theme.of(context).textTheme.headlineMedium,
                       ),
                     ),
                     SizedBox(height: 10),
@@ -138,8 +141,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 )
-              ],
-            ),
           ],
         ),
       ),

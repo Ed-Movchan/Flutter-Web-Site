@@ -50,15 +50,16 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - eduard_movchan_cv.png
-    - google_play_store_logo.png
-    - linkedin_logo.jpg
-    - cv_logo.png
-    - certificate_logo.jpg
-    - udemy_learn_flutter_certificate.jpg
-    - lemon_school_javascript_certificate.jpg
-    - loader.jpg
-    - loader.gif
+    - assets/cv.png
+    - assets/google_play_store_logo.png
+    - assets/linkedin_logo.jpg
+    - assets/cv_logo.png
+    - assets/certificate_logo.jpg
+    - assets/udemy_learn_flutter_certificate.jpg
+    - assets/lemon_school_javascript_certificate.jpg
+    - assets/loader.gif
+    - assets/icon_white.png
+    - assets/icon_black.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

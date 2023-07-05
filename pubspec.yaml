@@ -31,6 +31,7 @@ dependencies:
   cached_network_image: ^3.0.0
   animated_text_kit: ^4.2.2
   marquee: ^2.2.3
+  particles_flutter: ^0.1.4
 
 dev_dependencies:
   flutter_test:

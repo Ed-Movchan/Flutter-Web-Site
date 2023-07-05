@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
       },
       theme: ThemeData(
         primarySwatch: Colors.orange,
-          textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.green)
+          textTheme: TextTheme(headlineMedium: TextStyle(color: Colors.black54, fontSize: 34, fontWeight: FontWeight.bold)),
+          textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.blue)
       ),
     );
   }

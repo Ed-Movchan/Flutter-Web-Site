@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter_web_app/particles_background.dart';
 import 'package:flutter_web_app/widget/hand_cursor.dart';
 import 'package:marquee/marquee.dart';
 
@@ -55,74 +56,72 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         elevation: 0,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
+      body: Stack(
+        children: <Widget>[
+          CircularParticleScreen(),
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(top: 30),
+                  padding: EdgeInsets.only(top: 20),
                   child: Container(
-                      child: Image(
-                          image: AssetImage('assets/icon_white.png'))),
+                      child: Image(image: AssetImage('assets/icon_white.png'))),
                 ),
                 HandCursor(
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 30),
+                    padding: EdgeInsets.symmetric(vertical: 25),
                     child: SizedBox(
-                      child: DefaultTextStyle(
-                        style: const TextStyle(
-                            fontSize: 32,
-                            color: Colors.indigo,
-                            fontWeight: FontWeight.bold),
-                        child: AnimatedTextKit(
-                          animatedTexts: [
-                            TyperAnimatedText('www.movchanskiy.pp.ua', speed: Duration(milliseconds: 80)),
-                            WavyAnimatedText('www.movchanskiy.pp.ua'),
-                          ],
-                          repeatForever: true,
-                          onTap: () => html.window.location.reload(),
-                        ),
+                      child: AnimatedTextKit(
+                        animatedTexts: [
+                          TyperAnimatedText('www.movchanskiy.pp.ua',
+                              speed: Duration(milliseconds: 100),
+                              textStyle:
+                                  Theme.of(context).textTheme.headlineMedium),
+                        ],
+                        repeatForever: true,
+                        onTap: () => html.window.location.reload(),
                       ),
                     ),
                   ),
                 ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 20),
-              child: SelectableText(
-                'Last updated: 03 July 2023',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                menuSection('/CV', 'assets/cv_logo.png', ''),
-                externalLinkSection('assets/linkedin_logo.jpg', ''),
-                menuSection('/Application', 'assets/google_play_store_logo.png',
-                    'Applications'),
-                menuSection('/Certifications', 'assets/certificate_logo.jpg',
-                    'Certifications'),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _incrementCounter,
-                  style: ButtonStyle(
-                      backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.green)),
-                  child: Icon(Icons.plus_one),
-                ),
-                    SizedBox(height: 10),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Text(
-                    '$_counterLike',
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: SelectableText(
+                    'Last updated: 05 July 2023',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    menuSection('/CV', 'assets/cv_logo.png', ''),
+                    externalLinkSection('assets/linkedin_logo.jpg', ''),
+                    menuSection('/Application',
+                        'assets/google_play_store_logo.png', 'Applications'),
+                    menuSection('/Certifications',
+                        'assets/certificate_logo.jpg', 'Certifications'),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: _incrementCounter,
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.green)),
+                      child: Icon(Icons.plus_one),
+                    ),
+                    SizedBox(height: 10),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        '$_counterLike',
+                        style: Theme.of(context).textTheme.headlineMedium,
+                      ),
+                    ),
                     SizedBox(width: 50),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -141,8 +140,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 )
-          ],
-        ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 
@@ -21,18 +20,18 @@ class CircularParticleScreen extends StatelessWidget {
             height: screenHeight,
             width: screenWidth,
             onTapAnimation: true,
-            particleColor: Colors.blue.withAlpha(210),
+            particleColor: Colors.yellow.withAlpha(210),
             awayAnimationDuration: const Duration(milliseconds: 600),
-            maxParticleSize: 8,
+            maxParticleSize: 5,
             isRandSize: true,
             isRandomColor: true,
             randColorList: [
-              Colors.blue.withAlpha(210)
+              Colors.yellow.withAlpha(210)
             ],
             awayAnimationCurve: Curves.easeInOutBack,
             enableHover: true,
-            hoverColor: Colors.blue,
-            hoverRadius: 90,
+            hoverColor: Colors.yellow,
+            hoverRadius: 120,
             connectDots: true, //not recommended
           ),
         ),

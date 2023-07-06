@@ -32,6 +32,7 @@ dependencies:
   animated_text_kit: ^4.2.2
   marquee: ^2.2.3
   particles_flutter: ^0.1.4
+  simple_animations: ^5.0.2
 
 dev_dependencies:
   flutter_test:
@@ -53,7 +54,7 @@ flutter:
   assets:
     - assets/cv.png
     - assets/google_play_store_logo.png
-    - assets/linkedin_logo.jpg
+    - assets/about_me.png
     - assets/cv_logo.png
     - assets/certificate_logo.jpg
     - assets/udemy_learn_flutter_certificate.jpg

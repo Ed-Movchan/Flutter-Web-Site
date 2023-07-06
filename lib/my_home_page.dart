@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter_web_app/particles_background.dart';
-import 'package:flutter_web_app/widget/hand_cursor.dart';
 import 'package:marquee/marquee.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -13,25 +11,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counterLike = 0;
-  int _counterDislike = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counterLike++;
-    });
-  }
-
-  void _decrementCounter() {
-    setState(() {
-      _counterDislike--;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange.shade400,
+      backgroundColor: Colors.transparent,
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
         child: Container(
@@ -43,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Active Directory, FTP, SMTP, DHCP, Group Policy, Terminal Server, '
                 'Apache, Nginx, Git, Dart (Flutter), C# (.NET MAUI), GLPI, Zabbix, '
                 'HikVision, Mikrotik, GitLab Server, Open Project, Headwind MDM',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            style: Theme.of(context).textTheme.displaySmall,
             scrollAxis: Axis.horizontal,
             crossAxisAlignment: CrossAxisAlignment.start,
             blankSpace: 50.0,
@@ -56,10 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         elevation: 0,
       ),
-      body: Stack(
-        children: <Widget>[
-          CircularParticleScreen(),
-          SingleChildScrollView(
+      body: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -69,14 +49,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Container(
                       child: Image(image: AssetImage('assets/icon_white.png'))),
                 ),
-                HandCursor(
-                  child: Padding(
+                Padding(
                     padding: EdgeInsets.symmetric(vertical: 25),
-                    child: SizedBox(
+                    child: MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: SizedBox(
                       child: AnimatedTextKit(
                         animatedTexts: [
                           TyperAnimatedText('www.movchanskiy.pp.ua',
-                              speed: Duration(milliseconds: 100),
+                              speed: Duration(milliseconds: 140),
                               textStyle:
                                   Theme.of(context).textTheme.headlineMedium),
                         ],
@@ -84,12 +65,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         onTap: () => html.window.location.reload(),
                       ),
                     ),
+                    ),
                   ),
-                ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: SelectableText(
-                    'Last updated: 05 July 2023',
+                    'Last updated: 06 July 2023',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
@@ -97,54 +78,27 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     menuSection('/CV', 'assets/cv_logo.png', ''),
-                    externalLinkSection('assets/linkedin_logo.jpg', ''),
                     menuSection('/Application',
                         'assets/google_play_store_logo.png', 'Applications'),
                     menuSection('/Certifications',
                         'assets/certificate_logo.jpg', 'Certifications'),
+                    externalLinkSection('assets/about_me.png', ''),
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: _incrementCounter,
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.green)),
-                      child: Icon(Icons.plus_one),
-                    ),
-                    SizedBox(height: 10),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        '$_counterLike',
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                    ),
-                    SizedBox(width: 50),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        '$_counterDislike',
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    ElevatedButton(
-                      onPressed: _decrementCounter,
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red)),
-                      child: Icon(Icons.exposure_minus_1),
-                    ),
-                  ],
-                )
+                 Padding(
+                   padding: EdgeInsets.only(top: 10),
+                   child:Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                      Icon(Icons.copyright_sharp, size: 14,color: Colors.white),
+                      SelectableText('2023 Movchan',
+                       style: Theme.of(context).textTheme.labelLarge),
+                    ]
+                  ),
+                 ),
               ],
             ),
           ),
-        ],
-      ),
     );
   }
 
@@ -189,12 +143,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     Flexible(
                       child: Text(
                         text,
-                        style: TextStyle(
-                            color: Colors.black54,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                        style: Theme.of(context).textTheme.titleMedium),
                       ),
-                    ),
                   ],
                 ),
               ),
@@ -212,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
       padding: EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () => html.window.open(
-            'https://www.linkedin.com/in/eduard-movchan-sysadm/', "_blank"),
+            'https://about.me/eduardmovchan', "_blank"),
         customBorder: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),

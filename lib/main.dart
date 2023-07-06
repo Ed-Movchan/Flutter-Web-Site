@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_app/cv.dart';
 import 'package:flutter_web_app/certifications.dart';
 import 'package:flutter_web_app/application.dart';
+import 'package:flutter_web_app/gradient_background.dart';
 import 'package:flutter_web_app/my_home_page.dart';
+import 'package:flutter_web_app/particles_background.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,15 +18,25 @@ class MyApp extends StatelessWidget {
       title: 'Movchan Eduard - System Administrator',
       initialRoute: '/',
       routes: {
-        '/': (context) => MyHomePage(),
+        '/': (context) => Stack(children: [
+          Positioned.fill(child: GradientBackground()),
+          Positioned.fill(child: CircularParticleScreen()),
+          Center(child:MyHomePage())],
+        ),
         '/CV': (context) => CV(),
         '/Application': (context) => Application(),
         '/Certifications': (context) => Certifications(),
       },
       theme: ThemeData(
         primarySwatch: Colors.orange,
-          textTheme: TextTheme(headlineMedium: TextStyle(color: Colors.black54, fontSize: 34, fontWeight: FontWeight.bold)),
-          textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.blue)
+          textTheme: TextTheme(
+              headlineMedium: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+              displaySmall: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+              titleMedium: TextStyle(color: Colors.black87, fontSize: 16, fontWeight: FontWeight.bold),
+              labelLarge: TextStyle(color: Colors.white, fontSize: 14),
+          ),
+          textSelectionTheme: TextSelectionThemeData(selectionColor: Colors.blue),
+          fontFamily: "GoogleSansRegular",
       ),
     );
   }

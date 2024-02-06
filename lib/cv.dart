@@ -33,7 +33,7 @@ class CV extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   downloadFile(
-                      'https://drive.google.com/u/0/uc?id=1ttyAeV-1r3Vk8bQC_fZX1hwX0PEVi62e&export=download');
+                      'https://drive.usercontent.google.com/u/1/uc?id=1VDX8szbGrMY-C_woFiY7gChEY4-JjSOv&export=download');
                 },
                 style: ButtonStyle(
                     backgroundColor:

@@ -25,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Skills: Windows, Windows Server, Linux, MacOS, Android, iOS, '
                 'Active Directory, FTP, SMTP, DHCP, Group Policy, Terminal Server, '
                 'Apache, Nginx, Git, Dart (Flutter), C# (.NET MAUI), GLPI, Zabbix, '
-                'HikVision, Mikrotik, GitLab Server, Open Project, Headwind MDM',
+                'HikVision, Mikrotik, GitLab Server, Open Project, Samsung KNOX MDM',
             style: Theme.of(context).textTheme.displaySmall,
             scrollAxis: Axis.horizontal,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: SelectableText(
-                    'Last updated: 06 July 2023',
+                    'Last updated: 06 February 2024',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
                       Icon(Icons.copyright_sharp, size: 14,color: Colors.white),
-                      SelectableText('2023 Movchan',
+                      SelectableText('2024 Movchan',
                        style: Theme.of(context).textTheme.labelLarge),
                     ]
                   ),

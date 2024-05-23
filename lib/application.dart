@@ -40,7 +40,7 @@ class Application extends StatelessWidget {
                   },
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.green)),
+                          WidgetStateProperty.all<Color>(Colors.green)),
                   child: Text('Download',
                       style: TextStyle(color: Colors.white, fontSize: 20)),
                 ),
@@ -60,7 +60,7 @@ class Application extends StatelessWidget {
                   },
                   style: ButtonStyle(
                       backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.green)),
+                      WidgetStateProperty.all<Color>(Colors.green)),
                   child: Text('Download',
                       style: TextStyle(color: Colors.white, fontSize: 20)),
                 ),

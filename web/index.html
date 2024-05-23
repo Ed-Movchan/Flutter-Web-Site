@@ -21,6 +21,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="flutter_web_app">
+  <meta name="version" content="{{flutter_service_worker_version}}">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <title>Movchan Eduard - System Administrator</title>
@@ -46,7 +47,7 @@
   <img class="indicator" src="./assets/assets/loader.gif" />
 </div>
 <script>
-    var serviceWorkerVersion = null;
+    var serviceWorkerVersion = {{flutter_service_worker_version}};
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {

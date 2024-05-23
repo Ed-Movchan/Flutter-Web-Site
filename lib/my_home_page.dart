@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:marquee/marquee.dart';
+import 'package:marquee_list/marquee_list.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage();
@@ -20,26 +20,23 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           padding: EdgeInsets.only(bottom: 10),
           height: 50,
-          child: Marquee(
-            text:
-                'Skills: Windows, Windows Server, Linux, MacOS, Android, iOS, '
-                'Active Directory, FTP, SMTP, DHCP, Group Policy, Terminal Server, '
-                'Apache, Nginx, Git, Dart (Flutter), C# (.NET MAUI), GLPI, Zabbix, '
-                'HikVision, Mikrotik, GitLab Server, Open Project, Samsung KNOX MDM',
-            style: Theme.of(context).textTheme.displaySmall,
-            scrollAxis: Axis.horizontal,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            blankSpace: 50.0,
-            velocity: 50.0,
-            startPadding: 10.0,
-            accelerationDuration: Duration(seconds: 1),
-            accelerationCurve: Curves.linear,
-            decelerationDuration: Duration(milliseconds: 500),
+          child: MarqueeList(
+            scrollDirection: Axis.horizontal,
+            scrollDuration: const Duration(seconds: 3),
+            children: [
+              Text("Skills: Windows, Windows Server, Linux, MacOS, Android, iOS,"
+                   "Active Directory, FTP, SMTP, DHCP, Group Policy, Terminal Server,"
+                   "Apache, Nginx, Git, Dart (Flutter), C# (.NET MAUI), GLPI, Zabbix,"
+                   "HikVision, Mikrotik, GitLab Server, Open Project, Samsung KNOX MDM",
+              style: Theme.of(context).textTheme.displaySmall,
+              ),
+            ],
           ),
         ),
         elevation: 0,
       ),
       body: SingleChildScrollView(
+        controller: ScrollController(),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -70,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: SelectableText(
-                    'Last updated: 06 February 2024',
+                    'Last updated: 22 May 2024',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),

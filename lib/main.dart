@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_web_app/cv.dart';
 import 'package:flutter_web_app/certifications.dart';
 import 'package:flutter_web_app/application.dart';

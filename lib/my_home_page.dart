@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: AnimatedTextKit(
                         animatedTexts: [
                           TyperAnimatedText('www.movchanskiy.pp.ua',
-                              speed: Duration(milliseconds: 140),
+                              speed: Duration(milliseconds: 300),
                               textStyle:
                                   Theme.of(context).textTheme.headlineMedium),
                         ],
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: SelectableText(
-                    'Last updated: 22 May 2024',
+                    'Last updated: 25 June 2024',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),

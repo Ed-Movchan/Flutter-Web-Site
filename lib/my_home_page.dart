@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:marquee_list/marquee_list.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -23,14 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: MarqueeList(
             scrollDirection: Axis.horizontal,
             scrollDuration: const Duration(seconds: 3),
-            children: [
-              Text("Skills: Windows, Windows Server, Linux, MacOS, Android, iOS,"
-                   "Active Directory, FTP, SMTP, DHCP, Group Policy, Terminal Server,"
-                   "Apache, Nginx, Git, Dart (Flutter), C# (.NET MAUI), GLPI, Zabbix,"
-                   "HikVision, Mikrotik, GitLab Server, Open Project, Samsung KNOX MDM",
-              style: Theme.of(context).textTheme.displaySmall,
-              ),
-            ],
+            children: _getSkillChips(),
           ),
         ),
         elevation: 0,
@@ -41,33 +33,27 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: Container(
-                      child: Image(image: AssetImage('assets/icon_white.png'))),
-                ),
-                Padding(
-                    padding: EdgeInsets.symmetric(vertical: 25),
+                GestureDetector(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 20),
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: SizedBox(
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          TyperAnimatedText('www.movchanskiy.pp.ua',
-                              speed: Duration(milliseconds: 300),
-                              textStyle:
-                                  Theme.of(context).textTheme.headlineMedium),
-                        ],
-                        repeatForever: true,
-                        onTap: () => html.window.location.reload(),
-                      ),
-                    ),
-                    ),
+                      child:Container(
+                        child: Image(image: AssetImage('assets/icon_white.png')))),
                   ),
+                  onTap: () => html.window.location.reload(),
+                ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.symmetric(vertical: 25),
+                  child: SizedBox(
+                      child: SelectableText('www.movchanskiy.pp.ua',
+                              style: Theme.of(context).textTheme.headlineMedium),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20),
                   child: SelectableText(
-                    'Last updated: 25 June 2024',
+                    'Last updated: 22 Oktober 2024',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
@@ -77,8 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     menuSection('/CV', 'assets/cv_logo.png', ''),
                     menuSection('/Application',
                         'assets/google_play_store_logo.png', 'Applications'),
-                    menuSection('/Certifications',
-                        'assets/certificate_logo.jpg', 'Certifications'),
                     externalLinkSection('assets/about_me.png', ''),
                   ],
                 ),
@@ -97,6 +81,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
     );
+  }
+
+  List<Widget> _getSkillChips() {
+    List<String> skills = [
+      "Windows", "Windows Server", "Linux", "MacOS", "Android", "iOS",
+      "Active Directory", "SFTP", "SMTP", "DHCP", "Group Policy",
+      "Apache", "Docker", "Git", "Dart (Flutter)", "C# (.NET MAUI)",
+      "GLPI", "Zabbix", "HikVision", "Mikrotik", "GitLab Server",
+      "Open Project", "Powershell"
+    ];
+
+    return skills.map((skill) {
+      return Chip(
+        label: Text(skill, style: Theme.of(context).textTheme.bodyLarge),
+        backgroundColor: Colors.white,
+      );
+    }).toList();
   }
 
   Widget menuSection(String route, String image, String text) {
@@ -129,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 height: height * 0.08,
-                width: width * 0.4,
+                width: width * 0.45,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -183,7 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 height: height * 0.08,
-                width: width * 0.4,
+                width: width * 0.45,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

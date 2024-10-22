@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_app/cv.dart';
-import 'package:flutter_web_app/certifications.dart';
 import 'package:flutter_web_app/application.dart';
 import 'package:flutter_web_app/gradient_background.dart';
 import 'package:flutter_web_app/my_home_page.dart';
@@ -25,7 +24,6 @@ class MyApp extends StatelessWidget {
         ),
         '/CV': (context) => CV(),
         '/Application': (context) => Application(),
-        '/Certifications': (context) => Certifications(),
       },
       theme: ThemeData(
         primarySwatch: Colors.orange,

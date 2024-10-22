@@ -29,7 +29,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   cached_network_image: ^3.0.0
-  animated_text_kit: ^4.2.2
   marquee_list: ^1.0.0
   particles_flutter: ^0.1.4
   simple_animations: ^5.0.2
@@ -52,13 +51,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/cv.png
+    - assets/cv.jpg
     - assets/google_play_store_logo.png
     - assets/about_me.png
     - assets/cv_logo.png
-    - assets/certificate_logo.jpg
-    - assets/udemy_learn_flutter_certificate.jpg
-    - assets/lemon_school_javascript_certificate.jpg
     - assets/loader.gif
     - assets/icon_white.png
     - assets/icon_black.png

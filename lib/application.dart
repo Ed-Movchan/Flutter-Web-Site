@@ -25,47 +25,84 @@ class Application extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: EdgeInsets.all(5),
-                  child: SelectableText(
-                    'Weather Application (Flutter) / Android',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                SizedBox(height: 5),
-                ElevatedButton(
-                  onPressed: () {
-                    downloadFile(
-                        'https://drive.google.com/uc?id=149KqBfiXeQVPKOzCl3h2nl7bmTIgCwUH&export=download');
-                  },
-                  style: ButtonStyle(
-                      backgroundColor:
-                          WidgetStateProperty.all<Color>(Colors.green)),
-                  child: Text('Download',
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
-                ),
-                SizedBox(height: 30),
-                Padding(
-                  padding: EdgeInsets.all(5),
-                  child: SelectableText(
-                    'Simple Notes (Flutter) / Android',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                SizedBox(height: 5),
-                ElevatedButton(
-                  onPressed: () {
-                    downloadFile(
-                        'https://drive.google.com/uc?id=12RFwS4WjLtC9E-ItqjaZeUQAL868Naex&export=download');
-                  },
-                  style: ButtonStyle(
-                      backgroundColor:
-                      WidgetStateProperty.all<Color>(Colors.green)),
-                  child: Text('Download',
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
-                ),
+                _buildProjectSection(),
           ]),
         ),
+    );
+  }
+
+
+  Widget _buildProjectSection() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SizedBox(height: 10),
+        Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+          _buildProjectCard("Weather App", "Flutter / Android", 'https://drive.google.com/uc?id=149KqBfiXeQVPKOzCl3h2nl7bmTIgCwUH&export=download'),
+          SizedBox(height: 5),
+          ElevatedButton(
+            onPressed: () {
+              downloadFile(
+                  'https://drive.google.com/uc?id=149KqBfiXeQVPKOzCl3h2nl7bmTIgCwUH&export=download');
+            },
+            style: ButtonStyle(
+                backgroundColor:
+                WidgetStateProperty.all<Color>(Colors.green)),
+            child: Text('Download',
+                style: TextStyle(color: Colors.white, fontSize: 20)),
+          ),
+        ]),
+        SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildProjectCard("Simple Notes", "Flutter / Android", 'https://drive.google.com/uc?id=12RFwS4WjLtC9E-ItqjaZeUQAL868Naex&export=download'),
+            SizedBox(height: 5),
+            ElevatedButton(
+              onPressed: () {
+                downloadFile(
+                    'https://drive.google.com/uc?id=12RFwS4WjLtC9E-ItqjaZeUQAL868Naex&export=download');
+              },
+              style: ButtonStyle(
+                  backgroundColor:
+                  WidgetStateProperty.all<Color>(Colors.green)),
+              child: Text('Download',
+                  style: TextStyle(color: Colors.white, fontSize: 20)),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildProjectCard(String title, String description, String fileLink) {
+    return GestureDetector(
+      onTap: () {
+        downloadFile(fileLink);
+      },
+      child: Card(
+        elevation: 3,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 5),
+              Text(
+                description,
+                style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 

@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
                       Icon(Icons.copyright_sharp, size: 14,color: Colors.white),
-                      SelectableText('2024 Movchan',
+                      SelectableText('2025 Movchan',
                        style: Theme.of(context).textTheme.labelLarge),
                     ]
                   ),

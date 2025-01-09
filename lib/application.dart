@@ -77,12 +77,31 @@ class Application extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _buildProjectCard("Host Pinger", "Flutter / Android", 'https://drive.usercontent.google.com/u/0/uc?id=1JTvS_MpIWG_b9OFV2601u6u_ga0EjHH3&export=download'),
+            _buildProjectCard("Host Pinger", "Flutter / Android", 'https://github.com/Ed-Movchan/host-pinger/releases/download/v0.1.0/host_pinger-0.1.0.apk'),
             SizedBox(height: 5),
             ElevatedButton(
               onPressed: () {
                 downloadFile(
-                    'https://drive.usercontent.google.com/u/0/uc?id=1JTvS_MpIWG_b9OFV2601u6u_ga0EjHH3&export=download');
+                    'https://github.com/Ed-Movchan/host-pinger/releases/download/v0.1.0/host_pinger-0.1.0.apk');
+              },
+              style: ButtonStyle(
+                  backgroundColor:
+                  WidgetStateProperty.all<Color>(Colors.green)),
+              child: Text('Download',
+                  style: TextStyle(color: Colors.white, fontSize: 20)),
+            ),
+          ],
+        ),
+        SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildProjectCard("Port Scanner", "Flutter / Android", 'https://github.com/Ed-Movchan/port-scanner/releases/download/v0.1.0/port_scanner-v0.1.0.apk'),
+            SizedBox(height: 5),
+            ElevatedButton(
+              onPressed: () {
+                downloadFile(
+                    'https://github.com/Ed-Movchan/port-scanner/releases/download/v0.1.0/port_scanner-v0.1.0.apk');
               },
               style: ButtonStyle(
                   backgroundColor:

@@ -73,6 +73,25 @@ class Application extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildProjectCard("Host Pinger", "Flutter / Android", 'https://drive.usercontent.google.com/u/0/uc?id=1JTvS_MpIWG_b9OFV2601u6u_ga0EjHH3&export=download'),
+            SizedBox(height: 5),
+            ElevatedButton(
+              onPressed: () {
+                downloadFile(
+                    'https://drive.usercontent.google.com/u/0/uc?id=1JTvS_MpIWG_b9OFV2601u6u_ga0EjHH3&export=download');
+              },
+              style: ButtonStyle(
+                  backgroundColor:
+                  WidgetStateProperty.all<Color>(Colors.green)),
+              child: Text('Download',
+                  style: TextStyle(color: Colors.white, fontSize: 20)),
+            ),
+          ],
+        ),
       ],
     );
   }

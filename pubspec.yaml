@@ -59,7 +59,7 @@ flutter:
     - assets/icon_white.png
     - assets/icon_black.png
     - assets/weather_app_icon_275x275.png
-    - assets/simple_notes_icon_256x256.png
+    - assets/mini_notes_icon_256x256.png
     - assets/scanning-device_256x256.png
     - assets/host_pinger_icon_256x256.png
     - assets/whois_icon_256x256.png

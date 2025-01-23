@@ -55,13 +55,13 @@ class _ApplicationState extends State<Application> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildProjectCard('simple_notes_icon_256x256.png', "Simple Notes", "Flutter / Android",
-                  'https://drive.google.com/uc?id=12RFwS4WjLtC9E-ItqjaZeUQAL868Naex&export=download'),
+              _buildProjectCard('mini_notes_icon_256x256.png', "Mini Notes", "Flutter / Android",
+                  'https://github.com/Ed-Movchan/mini_notes/releases/download/mini_notes-v0.1.0/mini_notes-v0.1.0.apk'),
               SizedBox(height: 5),
               ElevatedButton(
                 onPressed: () {
                   downloadFile(
-                      'https://drive.google.com/uc?id=12RFwS4WjLtC9E-ItqjaZeUQAL868Naex&export=download');
+                      'https://github.com/Ed-Movchan/mini_notes/releases/download/mini_notes-v0.1.0/mini_notes-v0.1.0.apk');
                 },
                 style: ButtonStyle(
                     backgroundColor:

@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 20),
                   child: SelectableText(
-                    'Last updated: 22 January 2025',
+                    'Last updated: 28 January 2025',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
@@ -62,7 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     menuSection('/CV', 'assets/cv_logo.png', ''),
                     menuSection('/Application',
-                        'assets/google_play_store_logo.png', 'Applications'),
+                        'assets/application_logo.png', 'Applications'),
+                    menuSection('/Projects',
+                        'assets/project_logo.png', 'Projects'),
                     externalLinkSection('assets/about_me.png', ''),
                   ],
                 ),

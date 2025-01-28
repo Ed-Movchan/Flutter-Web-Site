@@ -52,9 +52,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/cv.jpg
-    - assets/google_play_store_logo.png
+    - assets/application_logo.png
     - assets/about_me.png
     - assets/cv_logo.png
+    - assets/project_logo.png
     - assets/loader.gif
     - assets/icon_white.png
     - assets/icon_black.png
@@ -63,6 +64,8 @@ flutter:
     - assets/scanning-device_256x256.png
     - assets/host_pinger_icon_256x256.png
     - assets/whois_icon_256x256.png
+    - assets/tap_icon_256x256.png
+    - assets/glpi_icon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

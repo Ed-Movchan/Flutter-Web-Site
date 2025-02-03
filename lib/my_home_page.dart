@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 20),
                   child: SelectableText(
-                    'Last updated: 28 January 2025',
+                    'Last updated: 03 February 2025',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),

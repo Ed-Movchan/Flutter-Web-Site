@@ -38,6 +38,7 @@ class _ProjectsState extends State<Projects> {
               SizedBox(height: 10),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 _buildProjectCard(
+                    'http://movchan-glpi.pp.ua',
                     'glpi_icon.png',
                     "GLPI",
                     "Inventory and Ticket System",
@@ -54,6 +55,24 @@ class _ProjectsState extends State<Projects> {
                 ),
               ]),
               SizedBox(height: 10),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                _buildProjectCard(
+                    'https://computerservicemovchan.pp.ua/',
+                    'icon_black.png',
+                    "Computer Service Movchan",
+                    "Computer Repairment",
+                    "Landing Page"),
+                SizedBox(height: 5),
+                ElevatedButton(
+                  onPressed: () => html.window.open(
+                      'https://computerservicemovchan.pp.ua/', "_blank"),
+                  style: ButtonStyle(
+                      backgroundColor:
+                      WidgetStateProperty.all<Color>(Colors.green)),
+                  child: Text('Link',
+                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                ),
+              ]),
             ],
           ),
         ),
@@ -61,10 +80,10 @@ class _ProjectsState extends State<Projects> {
     );
   }
 
-  Widget _buildProjectCard(String image, String title, String description, String creds) {
+  Widget _buildProjectCard(String link, String image, String title, String description, String creds) {
     return GestureDetector(
       onTap: () => html.window.open(
-          'http://movchan-glpi.pp.ua', "_blank"),
+          link, "_blank"),
       child: Card(
         elevation: 4,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

@@ -38,8 +38,7 @@ class CV extends StatelessWidget {
                 style: ButtonStyle(
                     backgroundColor:
                         WidgetStateProperty.all<Color>(Colors.green)),
-                child: Text('Download',
-                    style: TextStyle(color: Colors.white, fontSize: 20)),
+                child: Icon(Icons.file_download, color: Colors.white),
               ),
             ],
           ),

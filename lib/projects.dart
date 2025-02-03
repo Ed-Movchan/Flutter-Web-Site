@@ -50,8 +50,7 @@ class _ProjectsState extends State<Projects> {
                   style: ButtonStyle(
                       backgroundColor:
                       WidgetStateProperty.all<Color>(Colors.green)),
-                  child: Text('Link',
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                  child: Icon(Icons.link_sharp, color: Colors.white),
                 ),
               ]),
               SizedBox(height: 10),
@@ -69,8 +68,7 @@ class _ProjectsState extends State<Projects> {
                   style: ButtonStyle(
                       backgroundColor:
                       WidgetStateProperty.all<Color>(Colors.green)),
-                  child: Text('Link',
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                  child: Icon(Icons.link_sharp, color: Colors.white),
                 ),
               ]),
             ],
@@ -84,7 +82,9 @@ class _ProjectsState extends State<Projects> {
     return GestureDetector(
       onTap: () => html.window.open(
           link, "_blank"),
-      child: Card(
+      child: Container(
+        width: 370,
+      child:Card(
         elevation: 4,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Padding(
@@ -120,6 +120,7 @@ class _ProjectsState extends State<Projects> {
             ],
           ),
         ),
+      ),
       ),
     );
   }

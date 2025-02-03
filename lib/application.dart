@@ -51,8 +51,7 @@ class _ApplicationState extends State<Application> {
                   style: ButtonStyle(
                       backgroundColor:
                           WidgetStateProperty.all<Color>(Colors.green)),
-                  child: Text('Download',
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                  child: Icon(Icons.file_download, color: Colors.white),
                 ),
               ]),
               SizedBox(height: 10),
@@ -73,8 +72,7 @@ class _ApplicationState extends State<Application> {
                     style: ButtonStyle(
                         backgroundColor:
                             WidgetStateProperty.all<Color>(Colors.green)),
-                    child: Text('Download',
-                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                    child: Icon(Icons.file_download, color: Colors.white),
                   ),
                 ],
               ),
@@ -96,8 +94,7 @@ class _ApplicationState extends State<Application> {
                     style: ButtonStyle(
                         backgroundColor:
                             WidgetStateProperty.all<Color>(Colors.green)),
-                    child: Text('Download',
-                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                    child: Icon(Icons.file_download, color: Colors.white),
                   ),
                 ],
               ),
@@ -119,8 +116,7 @@ class _ApplicationState extends State<Application> {
                     style: ButtonStyle(
                         backgroundColor:
                             WidgetStateProperty.all<Color>(Colors.green)),
-                    child: Text('Download',
-                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                    child: Icon(Icons.file_download, color: Colors.white),
                   ),
                 ],
               ),
@@ -142,8 +138,7 @@ class _ApplicationState extends State<Application> {
                     style: ButtonStyle(
                         backgroundColor:
                             WidgetStateProperty.all<Color>(Colors.green)),
-                    child: Text('Download',
-                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                    child: Icon(Icons.file_download, color: Colors.white),
                   ),
                 ],
               ),
@@ -165,8 +160,7 @@ class _ApplicationState extends State<Application> {
                     style: ButtonStyle(
                         backgroundColor:
                             WidgetStateProperty.all<Color>(Colors.green)),
-                    child: Text('Download',
-                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                    child: Icon(Icons.file_download, color: Colors.white),
                   ),
                 ],
               ),
@@ -183,35 +177,40 @@ class _ApplicationState extends State<Application> {
       onTap: () {
         downloadFile(fileLink);
       },
-      child: Card(
-        elevation: 3,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Container(
-                    height: 50,
-                    width: 50,
-                    child: Image(image: AssetImage('assets/' + image))),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    description,
-                    style: TextStyle(fontSize: 16, color: Colors.grey[600]),
-                  ),
-                ],
-              ),
-            ],
+      child: Container(
+        width: 300,
+        child: Card(
+          elevation: 3,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Container(
+                      height: 50,
+                      width: 50,
+                      child: Image(image: AssetImage('assets/' + image))),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      description,
+                      style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

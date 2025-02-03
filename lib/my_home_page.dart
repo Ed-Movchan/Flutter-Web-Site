@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   border: Border.all(color: Colors.grey, width: 1.0),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color: Colors.grey.withValues(),
                       spreadRadius: 3,
                       blurRadius: 5,
                       offset: Offset(0, 3),
@@ -178,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   border: Border.all(color: Colors.grey, width: 1.0),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color: Colors.grey.withValues(),
                       spreadRadius: 3,
                       blurRadius: 5,
                       offset: Offset(0, 3),

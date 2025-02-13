@@ -83,7 +83,7 @@ class _ProjectsState extends State<Projects> {
       onTap: () => html.window.open(
           link, "_blank"),
       child: Container(
-        width: 370,
+        width: 360,
       child:Card(
         elevation: 4,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

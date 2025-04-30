@@ -26,14 +26,29 @@ class CV extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              Container(
-                  height: height * 0.9,
-                  width: width * 0.8,
-                  child: Image(image: AssetImage('assets/cv.jpg'))),
               ElevatedButton(
                 onPressed: () {
                   downloadFile(
-                      'https://drive.usercontent.google.com/u/0/uc?id=1OYbAV0LlgC_LyD1V7X5afYDMQ2wLMjN3&export=download');
+                      'https://drive.google.com/file/d/1KcjA_Ej0_Rpsu3HeFx7yRtsO_jsP5A2g/view?usp=sharing');
+                },
+                style: ButtonStyle(
+                    backgroundColor:
+                    WidgetStateProperty.all<Color>(Colors.green)),
+                child: Icon(Icons.file_download, color: Colors.white),
+              ),
+              Container(
+                  height: height * 0.9,
+                  width: width * 0.8,
+                  child: Image(image: AssetImage('assets/cv_1.jpg'))),
+              SizedBox(height: 10),
+              Container(
+                  height: height * 0.9,
+                  width: width * 0.8,
+                  child: Image(image: AssetImage('assets/cv_2.jpg'))),
+              ElevatedButton(
+                onPressed: () {
+                  downloadFile(
+                      'https://drive.google.com/file/d/1KcjA_Ej0_Rpsu3HeFx7yRtsO_jsP5A2g/view?usp=sharing');
                 },
                 style: ButtonStyle(
                     backgroundColor:
